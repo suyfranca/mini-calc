@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Mini Calc</title>
 </head>
 
@@ -12,47 +12,47 @@
   <header>
     <h1>Mini Calc</h1>
   </header>
-  <div class="calc">
+  <section class="calc">
     <div class="contentCalc">
-      <input type="text" data-js="outputCalc" class="outputCalc" value="0" readonly="true" />
+      <input type="text" data-js="outputCalc" class="outputCalc no-border" value="0" readonly="true" />
     </div>
     <div class="op contentCalc">
       <div class="letfCalc">
         <div>
-          <button data-js="buttonNumber" value="7">7</button>
-          <button data-js="buttonNumber" value="8">8</button>
-          <button data-js="buttonNumber" value="9">9</button>
+          <button class="no-border" data-js="buttonNumber" value="7">7</button>
+          <button class="no-border"data-js="buttonNumber" value="8">8</button>
+          <button class="no-border"data-js="buttonNumber" value="9">9</button>
         </div>
         <div>
-          <button data-js="buttonNumber" value="4">4</button>
-          <button data-js="buttonNumber" value="5">5</button>
-          <button data-js="buttonNumber" value="6">6</button>
+          <button class="no-border" data-js="buttonNumber" value="4">4</button>
+          <button class="no-border" data-js="buttonNumber" value="5">5</button>
+          <button class="no-border" data-js="buttonNumber" value="6">6</button>
         </div>
         <div>
-          <button data-js="buttonNumber" value="1">1</button>
-          <button data-js="buttonNumber" value="2">2</button>
-          <button data-js="buttonNumber" value="3">3</button>
+          <button class="no-border" data-js="buttonNumber" value="1">1</button>
+          <button class="no-border" data-js="buttonNumber" value="2">2</button>
+          <button class="no-border" data-js="buttonNumber" value="3">3</button>
         </div>
         <div>
-          <button data-js="buttonNumber" value="0">0</button>
-          <button data-js="ce">ce</button>
-          <button data-js="equal">=</button>
+          <button class="no-border" data-js="buttonNumber" value="0">0</button>
+          <button class="no-border" data-js="ce">ce</button>
+          <button class="no-border" data-js="equal">=</button>
         </div>
       </div>
 
       <div class="rightCalc">
-        <button data-js="sum" value="+">+</button>
-        <button data-js="sub" value="-">-</button>
-        <button data-js="mult" value="*">*</button>
-        <button data-js="div" value="/">/</button>
+        <button class="no-border" data-js="sum" value="+">+</button>
+        <button class="no-border" data-js="sub" value="-">-</button>
+        <button class="no-border" data-js="mult" value="*">*</button>
+        <button class="no-border" data-js="div" value="/">/</button>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="calcLogs">
   </div>
 
-  <script src="challenge-23.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

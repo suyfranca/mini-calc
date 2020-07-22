@@ -1,14 +1,7 @@
 
 (function (document, window) {
   'use strict;'
-
-  let $outputCalc = document.querySelector('[data-js="outputCalc"]');
-
-  let $buttonsNumber = document.querySelectorAll( '[data-js="buttonNumber"]' );
-  Array.prototype.forEach.call( $buttonsNumber, function( button ){
-    button.addEventListener('click', outputCalc, false);
-  });
-
+  
   let $sumBtn = document.querySelector('[data-js="sum"]');
   let $subBtn = document.querySelector('[data-js="sub"]');
   let $multBtn = document.querySelector('[data-js="mult"]');
@@ -16,9 +9,26 @@
   let $equalBtn = document.querySelector('[data-js="equal"]');
   let $ceBtn = document.querySelector('[data-js="ce"]');
 
+  let $outputCalc = document.querySelector('[data-js="outputCalc"]');
+  
+  let $buttonsNumber = document.querySelectorAll( '[data-js="buttonNumber"]' );
+  Array.prototype.forEach.call( $buttonsNumber, function( button ){
+    button.addEventListener('click', outputCalc, false);
+  });
+  
   let temp = "";
 
-  function outputCalc() {
+
+  $sumBtn.addEventListener('click', operator, false);
+  $subBtn.addEventListener('click', operator, false);
+  $multBtn.addEventListener('click', operator, false);
+  $divBtn.addEventListener('click', operator, false);
+
+  $ceBtn.addEventListener('click', cleanCalc, false);
+
+  $equalBtn.addEventListener('click', result, false);
+
+  function outputCalc(event) {
     if ($outputCalc.value === "0") {
       $outputCalc.value = "";
     }
@@ -29,12 +39,27 @@
 
   function cleanCalc() {
     $outputCalc.value = 0;
-    temp = 0;
+    temp = 0;''
   }
 
   function operator() {
-    temp += this.value;
-    $outputCalc.value = temp;
+    removeLastItemIfItIsAnOperator();
+    $outputCalc.value += this.value;
+    
+  }
+
+  function removeLastItemIfItIsAnOperator(){
+    if (isLastItemIsEqual()){
+      $outputCalc.value = $outputCalc.value.slice(0, -1);
+    }
+  }
+
+  function isLastItemIsEqual(){
+    let operations = ['+', '-', '*', '/'];
+    let lastItem = $outputCalc.value.split('').pop();
+    return operations.some(function(operator){
+      return operator === lastItem;
+    });
   }
 
   function result() {
@@ -69,15 +94,6 @@
       temp = $outputCalc.value;
       return temp;
     }
-  }
-
-  $sumBtn.addEventListener('click', operator, false);
-  $subBtn.addEventListener('click', operator, false);
-  $multBtn.addEventListener('click', operator, false);
-  $divBtn.addEventListener('click', operator, false);
-
-  $ceBtn.addEventListener('click', cleanCalc, false);
-
-  $equalBtn.addEventListener('click', result, false);
+  } 
 
 })(document, window);

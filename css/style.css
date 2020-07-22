@@ -14,6 +14,10 @@ h1 {
   color: #bf74e2;
 }
 
+.no-border {
+  border: none;
+}
+
 .calc {
   border-radius: 9px;
   margin: 50px;
@@ -21,6 +25,9 @@ h1 {
   padding: 30px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
 }
 
 .outputCalc {
@@ -28,7 +35,8 @@ h1 {
   padding-left: 7px;
   font-size: 20px;
   height: 35px;
-  width: 240px;
+  margin-bottom: 20px;
+  width: 85%;
 }
 
 .rightCalc {
