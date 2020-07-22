@@ -45,7 +45,6 @@
   function operator() {
     removeLastItemIfItIsAnOperator();
     $outputCalc.value += this.value;
-    
   }
 
   function removeLastItemIfItIsAnOperator(){
