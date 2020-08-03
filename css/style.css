@@ -1,72 +1,103 @@
-* {
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 body {
- font-family: Arial, Helvetica, sans-serif;
+ font-family: 'Dosis', sans-serif;
  font-size: 18px;
+ background-color: #ECF0F1;
 }
 
 h1 {
-  margin: 10px;
-  color: #bf74e2;
-}
-
-.no-border {
-  border: none;
-}
-
-.calc {
-  border-radius: 9px;
-  margin: 50px;
-  background-color: #ffc861;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 300px;
-  height: 300px;
-}
-
-.outputCalc {
-  border-radius: 9px;
-  padding-left: 7px;
-  font-size: 20px;
-  height: 35px;
-  margin-bottom: 20px;
-  width: 85%;
-}
-
-.rightCalc {
-  display: flex;
-  flex-direction: column-reverse;
-  margin-left: 5px;
-}
-
-.leftCalc {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-
-.op {
-  display: flex;
-}
-
-.contentCalc {
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 
 button {
+  font-family: inherit;
   color: #fff;
-  background-color: #8c47ac;
+  background-color: #FFF02A;
   font-weight: bold;
   border-radius: 9px;
   width: 44px;
   height: 44px;
   height: 30px;
   margin: 3px;
+}
+
+.headerTitle {
+  background-color: #141414;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.calc {
+  margin-top: 50px;
+}
+
+.calc__container {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  box-shadow: 6px 6px 6px rgba(0,0,0,.4);
+  background-color: #141414;
+  display: flex;
+  padding: 30px;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+}
+
+.calc__output {
+  display: flex;
+  justify-content: center;
+}
+
+.calc__output--style {
+  border: none;
+  border-radius: 6px;
+  height: 35px;
+  justify-content: flex-end;
+  padding: 0 7px;
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.calc__text{
+  text-align: end;
+  color: #8c47ac;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.calc__column-rigth {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-left: 5px;
+}
+
+.calc__column-left {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.btns {
+  display: flex;
+}
+
+.btns__op {
+  border: none;
+  color: #8c47ac;
 }

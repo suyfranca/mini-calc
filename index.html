@@ -4,48 +4,52 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;523;600;700;800&display=swap" rel="stylesheet">
   <title>Mini Calc</title>
 </head>
 
 <body>
 
-  <header>
+  <header class="headerTitle">
     <h1>Mini Calc</h1>
   </header>
+  
   <section class="calc">
-    <div class="contentCalc">
-      <input type="text" data-js="outputCalc" class="outputCalc no-border" value="0" readonly="true" />
+    <div class="calc__container">
+      <div class="calc__output">
+        <input type="text" data-js="outputCalc" class="calc__text calc__output--style" value="0" readonly="true" />
+      </div>
+      <div class="btns">
+        <div class="calc__column-left">
+          <div>
+            <button class="btns__op" data-js="buttonNumber" value="7">7</button>
+            <button class="btns__op"data-js="buttonNumber" value="8">8</button>
+            <button class="btns__op"data-js="buttonNumber" value="9">9</button>
+          </div>
+          <div>
+            <button class="btns__op" data-js="buttonNumber" value="4">4</button>
+            <button class="btns__op" data-js="buttonNumber" value="5">5</button>
+            <button class="btns__op" data-js="buttonNumber" value="6">6</button>
+          </div>
+          <div>
+            <button class="btns__op" data-js="buttonNumber" value="1">1</button>
+            <button class="btns__op" data-js="buttonNumber" value="2">2</button>
+            <button class="btns__op" data-js="buttonNumber" value="3">3</button>
+          </div>
+          <div>
+            <button class="btns__op" data-js="buttonNumber" value="0">0</button>
+            <button class="btns__op" data-js="ce">ce</button>
+            <button class="btns__op" data-js="equal">=</button>
+          </div>
+        </div>
+  
+        <div class="calc__column-rigth">
+          <button class="btns__op" data-js="sum" value="+">+</button>
+          <button class="btns__op" data-js="sub" value="-">-</button>
+          <button class="btns__op" data-js="mult" value="*">*</button>
+          <button class="btns__op" data-js="div" value="/">/</button>
+        </div>
     </div>
-    <div class="op contentCalc">
-      <div class="letfCalc">
-        <div>
-          <button class="no-border" data-js="buttonNumber" value="7">7</button>
-          <button class="no-border"data-js="buttonNumber" value="8">8</button>
-          <button class="no-border"data-js="buttonNumber" value="9">9</button>
-        </div>
-        <div>
-          <button class="no-border" data-js="buttonNumber" value="4">4</button>
-          <button class="no-border" data-js="buttonNumber" value="5">5</button>
-          <button class="no-border" data-js="buttonNumber" value="6">6</button>
-        </div>
-        <div>
-          <button class="no-border" data-js="buttonNumber" value="1">1</button>
-          <button class="no-border" data-js="buttonNumber" value="2">2</button>
-          <button class="no-border" data-js="buttonNumber" value="3">3</button>
-        </div>
-        <div>
-          <button class="no-border" data-js="buttonNumber" value="0">0</button>
-          <button class="no-border" data-js="ce">ce</button>
-          <button class="no-border" data-js="equal">=</button>
-        </div>
-      </div>
-
-      <div class="rightCalc">
-        <button class="no-border" data-js="sum" value="+">+</button>
-        <button class="no-border" data-js="sub" value="-">-</button>
-        <button class="no-border" data-js="mult" value="*">*</button>
-        <button class="no-border" data-js="div" value="/">/</button>
-      </div>
     </div>
   </section>
 

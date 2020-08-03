@@ -16,9 +16,6 @@
     button.addEventListener('click', outputCalc, false);
   });
   
-  let temp = "";
-
-
   $sumBtn.addEventListener('click', operator, false);
   $subBtn.addEventListener('click', operator, false);
   $multBtn.addEventListener('click', operator, false);
@@ -33,13 +30,11 @@
       $outputCalc.value = "";
     }
     $outputCalc.value = $outputCalc.value + this.value;
-    temp = $outputCalc.value;
-    console.log(temp);
+    return $outputCalc.value;
   }
 
   function cleanCalc() {
     $outputCalc.value = 0;
-    temp = 0;''
   }
 
   function operator() {
@@ -62,36 +57,32 @@
   }
 
   function result() {
-    let op = temp.match(/[\+\/\*-]/g);
-    let calc = temp.split(/[\+\/\*-]/g);
+    removeLastItemIfItIsAnOperator();
+    let op = $outputCalc.value.match(/[\+\/\*-]/g);
+    let calc = $outputCalc.value.split(/[\+\/\*-]/g);
 
-    if (op[0] === "+") {
-      $outputCalc.value = calc.reduce(function (acc, actual) {
-        return +acc + +actual;
-      });
-      temp = $outputCalc.value;
-      return temp;
-    }
-    if (op[0] === "-") {
-      $outputCalc.value = calc.reduce(function (acc, actual) {
-        return +acc - +actual;
-      });
-      temp = $outputCalc.value;
-      return temp;
-    }
-    if (op[0] === "*") {
-      $outputCalc.value = calc.reduce(function (acc, actual) {
-        return +acc * +actual;
-      });
-      temp = $outputCalc.value;
-      return temp;
-    }
-    if (op[0] === "/") {
-      $outputCalc.value = calc.reduce(function (acc, actual) {
-        return +acc / +actual;
-      });
-      temp = $outputCalc.value;
-      return temp;
+    switch (op[0]){
+      case '+':
+        $outputCalc.value = calc.reduce(function (acc, actual) {
+          return +acc + +actual;
+        });
+        return $outputCalc.value;
+      case '-':
+        $outputCalc.value = calc.reduce(function (acc, actual) {
+          return +acc - +actual;
+        });
+        return $outputCalc.value;
+      case '*':
+        $outputCalc.value = calc.reduce(function (acc, actual) {
+          return +acc * +actual;
+        });
+        return $outputCalc.value;
+      case '/':
+        $outputCalc.value = calc.reduce(function (acc, actual) {
+          return +acc / +actual;
+        });
+        return $outputCalc.value;
+
     }
   } 
 
